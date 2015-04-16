@@ -1,0 +1,48 @@
+Predicting Sons Heights Wiht A Simple Linear Regression Model
+========================================================
+author: Sepand Haghighi
+date:    4/16/2015
+
+## Developing Data Product Final Project
+
+
+
+Introduction :
+========================================================
+
+
+In this simple project we estimate sons height with a simple linear regression with fathers heights as predictor.
+
+You can visit application of this model on this links :
+
+[https://sepandhaghighi.shinyapps.io/Project]
+[https://sepandhaghighi.shinyapps.io/shiny] 
+
+Work with this application in easy you can choose Centimeter Or Inch And Then Enter Your Number . . . 
+
+Input Data
+========================================================
+Loading Libs and a little summary :
+```{r}
+library(UsingR)
+temp<-father.son
+summary(temp)
+
+```
+
+Create Model:
+========================================================
+```{r}
+model<-lm(sheight~fheight,data=temp)
+
+print(model)
+
+```
+
+Result :
+==========================================
+```{r}
+plot(temp$sheight,temp$fheight,main="Father-Son Height Plot" , xlab="Father Height" , ylab= "Son Height")
+abline(model)
+```
+
